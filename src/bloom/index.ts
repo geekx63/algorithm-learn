@@ -1,6 +1,5 @@
 import * as mmh3 from 'murmurhash3js';
-import BIT from './bit';
-import BitArray from './bitArray';
+import {BIT, BitArray} from 'bit-array-buffer';
 
 export default class BloomFilter {
     private bitArray: BitArray;
@@ -15,7 +14,7 @@ export default class BloomFilter {
         let points = this.getPostions(email);
 
         for(let point of points) {
-            this.bitArray.setAt(point, BIT.ON)
+            this.bitArray.set(point, BIT.ON)
         }
     }
 
@@ -24,7 +23,7 @@ export default class BloomFilter {
 
         let result = true;
         for(let point of points){
-            result = result && Boolean(this.bitArray.getAt(point));
+            result = result && Boolean(this.bitArray.get(point));
         }
 
         return result;
