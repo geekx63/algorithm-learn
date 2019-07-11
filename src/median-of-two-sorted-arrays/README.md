@@ -138,6 +138,8 @@ var findMedianSortedArrays = function(nums1, nums2) {
 
 ## 官方分界线找发
 
+    内存：93.24%
+    耗时：89.55%
     分析很透彻，综合效率也最高，计算复杂度最低，唯一缺点，代码不太好懂。
 
 ``` javascript
